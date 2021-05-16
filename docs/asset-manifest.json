@@ -1,22 +1,22 @@
 {
   "files": {
     "main.css": "/usedapp-demo/static/css/main.4836f76c.chunk.css",
-    "main.js": "/usedapp-demo/static/js/main.62be0ec5.chunk.js",
-    "main.js.map": "/usedapp-demo/static/js/main.62be0ec5.chunk.js.map",
+    "main.js": "/usedapp-demo/static/js/main.cb4a6a0c.chunk.js",
+    "main.js.map": "/usedapp-demo/static/js/main.cb4a6a0c.chunk.js.map",
     "runtime-main.js": "/usedapp-demo/static/js/runtime-main.f40a26c5.js",
     "runtime-main.js.map": "/usedapp-demo/static/js/runtime-main.f40a26c5.js.map",
-    "static/js/2.2ac168c9.chunk.js": "/usedapp-demo/static/js/2.2ac168c9.chunk.js",
-    "static/js/2.2ac168c9.chunk.js.map": "/usedapp-demo/static/js/2.2ac168c9.chunk.js.map",
+    "static/js/2.86667264.chunk.js": "/usedapp-demo/static/js/2.86667264.chunk.js",
+    "static/js/2.86667264.chunk.js.map": "/usedapp-demo/static/js/2.86667264.chunk.js.map",
     "static/js/3.4254047d.chunk.js": "/usedapp-demo/static/js/3.4254047d.chunk.js",
     "static/js/3.4254047d.chunk.js.map": "/usedapp-demo/static/js/3.4254047d.chunk.js.map",
     "index.html": "/usedapp-demo/index.html",
     "static/css/main.4836f76c.chunk.css.map": "/usedapp-demo/static/css/main.4836f76c.chunk.css.map",
-    "static/js/2.2ac168c9.chunk.js.LICENSE.txt": "/usedapp-demo/static/js/2.2ac168c9.chunk.js.LICENSE.txt"
+    "static/js/2.86667264.chunk.js.LICENSE.txt": "/usedapp-demo/static/js/2.86667264.chunk.js.LICENSE.txt"
   },
   "entrypoints": [
     "static/js/runtime-main.f40a26c5.js",
-    "static/js/2.2ac168c9.chunk.js",
+    "static/js/2.86667264.chunk.js",
     "static/css/main.4836f76c.chunk.css",
-    "static/js/main.62be0ec5.chunk.js"
+    "static/js/main.cb4a6a0c.chunk.js"
   ]
 }
