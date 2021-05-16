@@ -2,6 +2,7 @@ import { ChainId, Config, DAppProvider } from '@usedapp/core';
 import React from 'react';
 import { Switch, Route, HashRouter, Redirect } from 'react-router-dom';
 import styled from 'styled-components';
+import Balance from './Balance';
 import Connect from './Connect';
 
 const PageWrapper = styled.div`
@@ -25,6 +26,7 @@ function App() {
         <Switch>
           <PageWrapper>
             <Route exact path="/connect" component={Connect} />
+            <Route exact path="/balance" component={Balance} />
             <Redirect to="/connect" />
           </PageWrapper>
         </Switch>
