@@ -4,6 +4,7 @@ import { Switch, Route, HashRouter, Redirect } from 'react-router-dom';
 import styled from 'styled-components';
 import Balance from './Balance';
 import Connect from './Connect';
+import Contract from './Contract';
 
 const PageWrapper = styled.div`
   width: 100vw;
@@ -27,6 +28,7 @@ function App() {
           <PageWrapper>
             <Route exact path="/connect" component={Connect} />
             <Route exact path="/balance" component={Balance} />
+            <Route exact path="/contract" component={Contract} />
             <Redirect to="/connect" />
           </PageWrapper>
         </Switch>
