@@ -63,25 +63,25 @@ const Input = styled.input`
 export default function Contract() {
     const { account } = useEthers();
     const [ address, setAddress ] = useState('0xe22da380ee6b445bb8273c81944adeb6e8450422');
-    const tokenName = useContractCall({
+    const tokenBalance = useContractCall({
         abi,
         address,
-        method: 'name',
-        args: [],
+        method: 'balanceOf',
+        args: [account || '0x0000000000000000000000000000000000000000'],
     });
-    const [ tokenDecimals, tokenBalance ] = useContractCalls([
+    const [ tokenName, tokenDecimals ] = useContractCalls([
+        {
+            abi,
+            address,
+            method: 'name',
+            args: [],
+        },
         {
           abi,
           address,
           method: 'decimals',
           args: [],
         },
-        {
-          abi,
-          address,
-          method: 'balanceOf',
-          args: [account],
-        }
     ]);
     return (
         <div>
