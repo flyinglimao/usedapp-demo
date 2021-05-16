@@ -23,5 +23,5 @@ export default function Connect() {
     }, [error]);
     return account ?
         <h1>{ account }</h1> :
-        <ConnectButton onClick={() => activateBrowserWallet()}>Connect To Wallet</ConnectButton>;
+        <ConnectButton onClick={() => activateBrowserWallet()}>連接錢包</ConnectButton>;
 }
