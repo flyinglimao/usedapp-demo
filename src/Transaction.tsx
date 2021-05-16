@@ -62,33 +62,27 @@ export default function Transaction() {
             { state.status === 'None' && <></> }
             { state.status === 'Exception' && <h1>交易失敗，參數不正確或取消交易</h1> }
             { state.status === 'Mining' && 
-                <>
-                    <h1>交易進行中<br />
-                        <A href={getExplorerTransactionLink(state.transaction.hash, ChainId.Kovan)}>
-                            { shortenTransactionHash(state.transaction.hash) }
-                        </A>
-                    </h1>
-                </>
+                <h1>交易進行中<br />
+                    <A href={getExplorerTransactionLink(state.transaction.hash, ChainId.Kovan)}>
+                        { shortenTransactionHash(state.transaction.hash) }
+                    </A>
+                </h1>
             }
             { state.status === 'Success' &&
-                <>
-                    <h1>交易成功<br />
-                        <A href={getExplorerTransactionLink(state.transaction.hash, ChainId.Kovan)}>
-                            { shortenTransactionHash(state.transaction.hash) }
-                        </A>
-                        位於 { state.receipt.blockNumber }
-                    </h1>
-                </>
+                <h1>交易成功<br />
+                    <A href={getExplorerTransactionLink(state.transaction.hash, ChainId.Kovan)}>
+                        { shortenTransactionHash(state.transaction.hash) }
+                    </A>
+                    位於 { state.receipt.blockNumber }
+                </h1>
             }
             { state.status === 'Fail' &&
-                <>
-                    <h1>交易失敗<br />
-                        <A href={getExplorerTransactionLink(state.transaction.hash, ChainId.Kovan)}>
-                            { shortenTransactionHash(state.transaction.hash) } 
-                        </A>
-                        位於 { state.receipt.blockNumber }
-                    </h1>
-                </>
+                <h1>交易失敗<br />
+                    <A href={getExplorerTransactionLink(state.transaction.hash, ChainId.Kovan)}>
+                        { shortenTransactionHash(state.transaction.hash) } 
+                    </A>
+                    位於 { state.receipt.blockNumber }
+                </h1>
             }
             <BurnButton onClick={() => send('0x000000000000000000000000000000000000dead', '1000000')}>燒毀 1 USDC</BurnButton>
         </div>
