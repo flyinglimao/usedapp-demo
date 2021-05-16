@@ -1,6 +1,6 @@
 import { Interface } from '@ethersproject/abi';
 import { formatUnits } from '@ethersproject/units';
-import { useContractCall, useEthers } from '@usedapp/core';
+import { useContractCall, useContractCalls, useEthers } from '@usedapp/core';
 import { ChangeEvent, useState } from 'react';
 import styled from 'styled-components';
 
@@ -69,18 +69,20 @@ export default function Contract() {
         method: 'name',
         args: [],
     });
-    const tokenDecimals = useContractCall({
-        abi,
-        address,
-        method: 'decimals',
-        args: [],
-    });
-    const tokenBalance = useContractCall({
-        abi,
-        address,
-        method: 'balanceOf',
-        args: [account],
-    });
+    const [ tokenDecimals, tokenBalance ] = useContractCalls([
+        {
+          abi,
+          address,
+          method: 'decimals',
+          args: [],
+        },
+        {
+          abi,
+          address,
+          method: 'balanceOf',
+          args: [account],
+        }
+    ]);
     return (
         <div>
             <h1>
