@@ -1,5 +1,5 @@
 import { Contract } from '@ethersproject/contracts';
-import { ChainId, getExplorerTransactionLink, useContractFunction } from '@usedapp/core';
+import { ChainId, getExplorerTransactionLink, useContractFunction, useEthers } from '@usedapp/core';
 import styled from 'styled-components';
 
 const abiJSON = [
@@ -36,7 +36,7 @@ const A = styled.a`
         content: ' ';
     }
 `;
-const BurnButton = styled.button`
+const StyledButton = styled.button`
     display: block;
     margin: 0 auto;
     border: none;
@@ -53,6 +53,7 @@ const BurnButton = styled.button`
 `;
 
 export default function Transaction() {
+    const { activateBrowserWallet, account } = useEthers();
     const { send, state } = useContractFunction(usdcContract, 'transfer');
     function shortenTransactionHash(hash: string) {
         return hash.substr(0, 6) + '...' + hash.substr(-4)
@@ -84,7 +85,10 @@ export default function Transaction() {
                     位於 { state.receipt.blockNumber }
                 </h1>
             }
-            <BurnButton onClick={() => send('0x000000000000000000000000000000000000dead', '1000000')}>燒毀 1 USDC</BurnButton>
+            { account ?
+                <StyledButton onClick={() => send('0x000000000000000000000000000000000000dead', '1000000')}>燒毀 1 USDC</StyledButton>:
+                <StyledButton onClick={() => activateBrowserWallet()}>連接錢包</StyledButton>
+            }
         </div>
     );
 }
