@@ -18,7 +18,6 @@ const ConnectButton = styled.button`
 
 export default function Connect() {
     const { activateBrowserWallet, account, error } = useEthers();
-    console.log(error)
     useEffect(() => {
         error && alert(error);
     }, [error]);
