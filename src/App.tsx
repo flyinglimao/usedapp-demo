@@ -5,6 +5,7 @@ import styled from 'styled-components';
 import Balance from './Balance';
 import Connect from './Connect';
 import Contract from './Contract';
+import Transaction from './Transaction';
 
 const PageWrapper = styled.div`
   width: 100vw;
@@ -26,7 +27,7 @@ const Nav = styled.div`
   top: 2rem;
   left: 50%;
   transform: translateX(-50%);
-  background-color: hsl(323, 65%, 90%);;
+  background-color: hsl(323, 65%, 90%);
   display: flex;
   padding: .3rem .3rem;
   border-radius: 12px;
@@ -60,6 +61,7 @@ function App() {
             <Route exact path="/connect" component={Connect} />
             <Route exact path="/balance" component={Balance} />
             <Route exact path="/contract" component={Contract} />
+            <Route exact path="/transaction" component={Transaction} />
             <Redirect to="/connect" />
           </PageWrapper>
         </Switch>
